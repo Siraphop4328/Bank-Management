@@ -9,5 +9,6 @@ Simple Bank System
 
 **Next time**
 
-Save/load accout data to/from a file
-GUI impliment
+-Save/load accout data to/from a file
+
+-GUI impliment
