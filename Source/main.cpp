@@ -36,9 +36,17 @@ public:
 
 	void Widthdraw(double widthdrawAmount)
 	{
-		balance -= widthdrawAmount;
-		std::cout << "Widthdraw successful.\n";
-		std::cout << "Balance: " << std::fixed << std::setprecision(2) << balance << '\n';
+		if (widthdrawAmount > balance) {
+			std::cout << "Insufficient balance.\n";
+			
+		}
+		else {
+			balance -= widthdrawAmount;
+			std::cout << "Widthdraw successful.\n";
+			std::cout << "Balance: " << std::fixed << std::setprecision(2) << balance << '\n';
+		}
+		
+		
 	}
 };
 
@@ -63,9 +71,9 @@ int main()
 		
 		system("cls");
 		
-
 		
-
+		
+		
 		switch (choice) {
 		case 1: 
 			std::cout << "Enter deposit amount: ";
