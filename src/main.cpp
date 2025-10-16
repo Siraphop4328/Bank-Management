@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <iomanip>
+#include <fstream>
 
 
 class BankAccount {
@@ -14,7 +15,7 @@ public:
 
 	BankAccount(std::string accNumber, std::string accName, double initialBalance)
 	{
-		
+
 		accountNumber = accNumber;
 		accountName = accName;
 		balance = initialBalance;
@@ -38,15 +39,15 @@ public:
 	{
 		if (widthdrawAmount > balance) {
 			std::cout << "Insufficient balance.\n";
-			
+
 		}
 		else {
 			balance -= widthdrawAmount;
 			std::cout << "Widthdraw successful.\n";
 			std::cout << "Balance: " << std::fixed << std::setprecision(2) << balance << '\n';
 		}
-		
-		
+
+
 	}
 };
 
@@ -65,17 +66,18 @@ int main()
 		std::cout << "1. Deposit\n";
 		std::cout << "2. Withdraw\n";
 		std::cout << "3. Show accout details\n";
+		std::cout << "4. Exit\n";
 
 		std::cin >> choice;
 		std::cin.get();
-		
+
 		system("cls");
-		
-		
-		
-		
+
+
+
+
 		switch (choice) {
-		case 1: 
+		case 1:
 			std::cout << "Enter deposit amount: ";
 			std::cin >> depositAmount;
 			account1.Deposit(depositAmount);
@@ -95,6 +97,7 @@ int main()
 			std::cin.get();
 			system("cls");
 			break;
+		case 4: exit(0);
 		default: std::cout << "Invalid choice\n";
 			std::cin.get();
 			system("cls");
